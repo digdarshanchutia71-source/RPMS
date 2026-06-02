@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPMS - Register</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card" style="max-width: 500px;">
+            <h2>Create an Account</h2>
+            <p>Join the Research Project Management System</p>
+            
+            <div id="error-message" class="error-hidden"></div>
+            <div id="success-message" class="success-hidden"></div>
+
+            <form id="register-form">
+                <div class="input-group">
+                    <label for="full_name">Full Name</label>
+                    <input type="text" id="full_name" required placeholder="Enter your full name">
+                </div>
+
+                <div class="input-group">
+                    <label for="email">University Email</label>
+                    <input type="email" id="email" required placeholder="Enter your email">
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required placeholder="Create a strong password">
+                </div>
+
+                <div class="input-group">
+                    <label for="role">Role</label>
+                    <select id="role" required>
+                        <option value="" disabled selected>Select your role</option>
+                        <option value="student">Student</option>
+                        <option value="faculty">Faculty Guide</option>
+                        <option value="admin">Administrator</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="department">Department</label>
+                    <input type="text" id="department" required placeholder="e.g., Computer Science">
+                </div>
+
+                <button type="submit" class="btn-primary" id="register-btn">Register</button>
+            </form>
+            
+            <p class="register-link">Already have an account? <a href="index.html">Log in here</a></p>
+        </div>
+    </div>
+
+    <script src="js/register.js"></script>
+</body>
+</html>

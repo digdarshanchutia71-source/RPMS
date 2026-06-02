@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Proposal - RPMS Student Portal</title>
+    <link rel="stylesheet" href="css/styles.css?v=proposal-padding-blue">
+</head>
+<body class="dashboard-body">
+    
+    <nav class="navbar">
+        <div class="nav-brand">RPMS Student Portal</div>
+        <div class="nav-user">
+            <a href="student-dashboard.html" class="btn-secondary" style="text-decoration: none; margin-right: 20px;">Back to Dashboard</a>
+            <span id="user-name-display">Loading...</span>
+            <button id="logout-btn" class="btn-secondary">Log Out</button>
+        </div>
+    </nav>
+
+    <main class="dashboard-container">
+        <header class="dashboard-header">
+            <h1>Submit Research Proposal</h1>
+            <p class="proposal-subtitle">Initiate your project by submitting your topic and methodology for faculty review.</p>
+        </header>
+
+        <div id="system-message" class="success-hidden"></div>
+        <div id="error-message" class="error-hidden"></div>
+
+        <section class="dashboard-section proposal-section">
+            <form id="proposal-form" class="proposal-form">
+                
+                <div class="input-group">
+                    <label for="title">Project Title</label>
+                    <input type="text" id="title" required placeholder="Enter the title of your research project">
+                </div>
+
+                <div class="input-group">
+                    <label for="domain">Research Domain</label>
+                    <input type="text" id="domain" required placeholder="e.g., Artificial Intelligence, Cyber Security">
+                </div>
+
+                <div class="input-group">
+                    <label for="abstract">Abstract</label>
+                    <textarea id="abstract" rows="5" required placeholder="Provide a brief summary of your research objectives..."></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label for="methodology">Proposed Methodology</label>
+                    <textarea id="methodology" rows="6" required placeholder="Detail the steps, tools, and algorithms you plan to use..."></textarea>
+                </div>
+
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label for="start_date">Expected Start Date</label>
+                        <input type="date" id="start_date" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="end_date">Expected End Date</label>
+                        <input type="date" id="end_date" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary proposal-submit" id="submit-proposal-btn">Submit Proposal</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="js/student-proposal.js"></script>
+</body>
+</html>

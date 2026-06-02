@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Projects - Admin RPMS</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="dashboard-body">
+    
+    <nav class="navbar">
+        <div class="nav-brand">RPMS Admin Portal</div>
+        <div class="nav-user">
+            <a href="admin-dashboard.html" class="btn-secondary" style="text-decoration: none;">Back to Dashboard</a>
+        </div>
+    </nav>
+
+    <main class="dashboard-container">
+        <header class="dashboard-header">
+            <h1>Assign Faculty Guides</h1>
+            <p style="color: #7f8c8d; margin-top: 5px;">Review submitted proposals and assign guides.</p>
+        </header>
+
+        <div id="system-message" class="success-hidden"></div>
+
+        <section class="dashboard-section">
+            <div class="card-list" id="projects-list">
+                <p>Loading projects and faculty data...</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/admin-projects.js"></script>
+</body>
+</html>

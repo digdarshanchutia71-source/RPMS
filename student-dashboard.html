@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - RPMS</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="dashboard-body">
+    
+    <nav class="navbar">
+        <div class="nav-brand">RPMS Student Portal</div>
+        <div class="nav-user">
+            <span id="user-name-display">Loading...</span>
+            <button id="logout-btn" class="btn-secondary">Log Out</button>
+        </div>
+    </nav>
+
+    <main class="dashboard-container">
+        <header class="dashboard-header" style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <h1>My Research Overview</h1>
+            </div>
+            <div>
+                <a href="student-proposal.html" class="btn-primary" style="text-decoration: none; display: inline-block; padding: 10px 20px; width: auto;">
+                    Submit New Proposal
+                </a>
+            </div>
+        </header>
+
+        <section class="stats-grid">
+            <div class="stat-card clickable-stat-card" id="total-projects-card" role="button" tabindex="0">
+                <h3>Total Projects</h3>
+                <p class="stat-number" id="stat-projects">-</p>
+                <span class="stat-card-link">View Project</span>
+            </div>
+            <div class="stat-card clickable-stat-card" id="total-milestones-card" role="button" tabindex="0">
+                <h3>Milestones</h3>
+                <p class="stat-number" id="stat-milestones">-</p>
+                <span class="stat-card-link">View Milestones</span>
+            </div>
+            
+            <div class="stat-card upload-stat-card" style="display: flex; flex-direction: column; align-items: center;">
+                <h3>Documents</h3>
+                <p class="stat-number" id="stat-documents" style="margin-bottom: 5px;">-</p>
+                <a href="student-upload.html" style="color: #3498db; text-decoration: none; font-size: 13px; font-weight: 600; margin-top: 5px; transition: color 0.2s;">
+                     Upload New
+                </a>
+            </div>
+
+            <div class="stat-card clickable-stat-card" id="total-feedback-card" role="button" tabindex="0">
+                <h3>Feedback</h3>
+                <p class="stat-number" id="stat-feedback">-</p>
+                <span class="stat-card-link">View Feedback</span>
+            </div>
+        </section>
+
+        <section class="dashboard-section reveal-section" id="my-projects-section">
+            <h2>My Project</h2>
+            <div class="card-list" id="my-projects-list">
+                <p>Loading project...</p>
+            </div>
+        </section>
+
+        <section class="dashboard-section reveal-section" id="upcoming-milestones-section">
+            <h2>Upcoming Milestones</h2>
+            <div class="card-list" id="upcoming-milestones-list">
+                <p>Loading milestones...</p>
+            </div>
+        </section>
+
+        <section class="dashboard-section reveal-section" id="recent-feedback-section">
+            <h2>Recent Feedback</h2>
+            <div class="card-list" id="recent-feedback-list">
+                <p>Loading feedback...</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/student-dashboard.js"></script>
+</body>
+</html>

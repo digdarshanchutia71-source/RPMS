@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Funding - Admin RPMS</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="dashboard-body">
+    
+    <nav class="navbar">
+        <div class="nav-brand">RPMS Admin Portal</div>
+        <div class="nav-user">
+            <a href="admin-dashboard.html" class="btn-secondary" style="text-decoration: none; margin-right: 20px;">Back to Dashboard</a>
+            <span id="user-name-display">Loading...</span>
+            <button id="logout-btn" class="btn-secondary">Log Out</button>
+        </div>
+    </nav>
+
+    <main class="dashboard-container">
+        <header class="dashboard-header">
+            <h1>Research Grants & Funding</h1>
+            <p style="color: #7f8c8d; margin-top: 5px;">Record sanctioned amounts and track utilization for approved projects.</p>
+        </header>
+
+        <div id="system-message" class="success-hidden"></div>
+        <div id="error-message" class="error-hidden"></div>
+
+        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 20px; align-items: start;">
+            
+            <section class="dashboard-section" style="padding: 20px;">
+                <h2 style="font-size: 1.2rem;">Add New Grant</h2>
+                <form id="funding-form">
+                    
+                    <div class="input-group">
+                        <label for="project_id">Select Project</label>
+                        <select id="project_id" required>
+                            <option value="" disabled selected>Loading projects...</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="funding_agency">Funding Agency</label>
+                        <input type="text" id="funding_agency" required placeholder="e.g., UGC, AICTE, DST">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="grant_id">Grant ID / Reference No.</label>
+                        <input type="text" id="grant_id" placeholder="Enter official grant number">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="sanctioned_amount">Sanctioned Amount (₹)</label>
+                        <input type="number" id="sanctioned_amount" required placeholder="e.g., 50000" min="0">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="approval_date">Approval Date</label>
+                        <input type="date" id="approval_date" required style="width: 100%; padding: 12px; border: 1px solid #bdc3c7; border-radius: 4px;">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="utilization_status">Utilization Status</label>
+                        <select id="utilization_status" required>
+                            <option value="Not Used" selected>Not Used</option>
+                            <option value="Partially Used">Partially Used</option>
+                            <option value="Fully Used">Fully Used</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-primary" id="add-funding-btn" style="background-color: #27ae60;">Record Funding</button>
+                </form>
+            </section>
+
+            <section class="dashboard-section" style="padding: 20px;">
+                <h2>Funding Tracking Overview</h2>
+                <div id="funding-list">
+                    <p class="empty-state">Loading funding records...</p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="js/admin-funding.js"></script>
+</body>
+</html>

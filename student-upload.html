@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Upload - RPMS Student Portal</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="dashboard-body">
+    
+    <nav class="navbar">
+        <div class="nav-brand">RPMS Student Portal</div>
+        <div class="nav-user">
+            <a href="student-dashboard.html" class="btn-secondary" style="text-decoration: none; margin-right: 20px;">Back to Dashboard</a>
+            <span id="user-name-display">Loading...</span>
+            <button id="logout-btn" class="btn-secondary">Log Out</button>
+        </div>
+    </nav>
+
+    <main class="dashboard-container">
+        <header class="dashboard-header">
+            <h1>Upload Milestone Document</h1>
+            <p style="color: #7f8c8d; margin-top: 5px;">Submit your research drafts and final reports here. Accepted formats: PDF, DOCX, PPTX.</p>
+        </header>
+
+        <div id="system-message" class="success-hidden"></div>
+        <div id="error-message" class="error-hidden"></div>
+
+        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 20px; align-items: start;">
+            
+            <section class="dashboard-section" style="padding: 20px;">
+                <form id="upload-form">
+                    <div class="input-group">
+                        <label for="project_id">Select Project</label>
+                        <select id="project_id" required>
+                            <option value="" disabled selected>Loading projects...</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="milestone_id">Select Milestone</label>
+                        <select id="milestone_id" required>
+                            <option value="" disabled selected>Select a project first...</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="document_type">Document Type</label>
+                        <select id="document_type" required>
+                            <option value="" disabled selected>Select type</option>
+                            <option value="Literature Review">Literature Review</option>
+                            <option value="Draft">Draft</option>
+                            <option value="Final Report">Final Report</option>
+                            <option value="Presentation">Presentation</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="file">Select File</label>
+                        <input type="file" id="file" name="file" accept=".pdf,.docx,.pptx" required style="padding: 8px; background: white;">
+                    </div>
+
+                    <button type="submit" class="btn-primary" id="upload-btn">Upload Document</button>
+                </form>
+            </section>
+
+            <section class="dashboard-section" style="padding: 20px;">
+                <h2>My Uploaded Documents</h2>
+                <div id="documents-list">
+                    <p class="empty-state">Loading documents...</p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="js/student-upload.js"></script>
+</body>
+</html>
